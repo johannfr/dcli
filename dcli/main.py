@@ -6,7 +6,11 @@ from pathlib import Path
 
 def get_docker_images(ctx, args, incomplete):
     client = docker.from_env()
-    return [tag for tags in [x.tags for x in client.images.list()] for tag in tags]
+    tags = [tag for tags in [x.tags for x in client.images.list()] for tag in tags]
+    if len(incomplete) > 0:
+        return [t for t in tags if incomplete in t]
+    else:
+        return tags
 
 
 @click.command()
