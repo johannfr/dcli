@@ -24,7 +24,7 @@ def main(imagename):
         if all(x in [f.name for f in d.iterdir()] for x in [".git", "docker"]):
             workspace = d
             break
-    print(f"Mounting workspace: {workspace}")
+    click.secho(f"Mounting workspace: {workspace}", fg="blue")
     call(
         f"docker run --rm -it -v '{workspace}':'{workspace}' -w '{cwd}' {imagename}",
         shell=True,
