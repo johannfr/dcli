@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "dcli"
+version = "0.1.0"
+description = ""
+authors = ["Jóhann Friðriksson <johann.fridriksson@gmail.com"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+click = "^7.1.2"
+docker = "^5.0.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+ipython = "^7.22.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+dcli = "dcli.main:main"
