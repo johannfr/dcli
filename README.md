@@ -2,7 +2,7 @@
 
 Runs an interactive Docker shell into the specified image.
 
-It mounts the current "workspace", which is determined by locating the `.git` and `docker` folders, into the container and sets the CWD and the outside CWD.
+It mounts the current "workspace", which is determined by locating the `.git` and `docker` folders, into the container and sets the container-shell CWD to the outside CWD.
 
 ## Installation
 
