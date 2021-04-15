@@ -32,4 +32,4 @@ Add `eval (env _DCLI_COMPLETE=source_fish dcli)` to `~/.config/fish/completions/
 
 ## Demo
 
-[![asciicast](https://asciinema.org/a/cP0HTR9RtJj7e6dnyz0mu3Puk.svg)](https://asciinema.org/a/cP0HTR9RtJj7e6dnyz0mu3Puk)
+[![asciicast](https://asciinema.org/a/2gJEIUZFeWsPRynm0nBB1yetq.svg)](https://asciinema.org/a/2gJEIUZFeWsPRynm0nBB1yetq)
