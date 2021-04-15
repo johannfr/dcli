@@ -8,12 +8,12 @@ It mounts the current "workspace", which is determined by locating the `.git` an
 
 ### pip
 ```
-pip install --user git+https://github.com/johannfr/dscli
+pip install --user git+https://github.com/johannfr/dcli
 ```
 
 ### pipx
 ```
-pipx install git+https://github.com/johannfr/dscli
+pipx install git+https://github.com/johannfr/dcli
 ```
 
 ## Shell completion
