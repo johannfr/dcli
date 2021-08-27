@@ -11,6 +11,7 @@ def get_docker_images(ctx, args, incomplete):
 
 @click.command()
 @click.argument("imagename", type=click.STRING, autocompletion=get_docker_images)
+@click.argument("docker_args", nargs=-1, type=click.UNPROCESSED)
 def main(imagename):
     from subprocess import call
     from pathlib import Path
@@ -23,7 +24,7 @@ def main(imagename):
             break
     click.secho(f"Mounting workspace: {workspace}", fg="yellow")
     call(
-        f"docker run --rm -it -v '{workspace}':'{workspace}' -w '{cwd}' '{imagename}'",
+        f"docker run --rm -it {' '.join(docker_args)} -v '{workspace}':'{workspace}' -w '{cwd}' '{imagename}'",
         shell=True,
     )
 
