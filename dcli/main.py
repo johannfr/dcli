@@ -10,9 +10,9 @@ def get_docker_images(ctx, args, incomplete):
 
 
 @click.command()
+@click.option("-p", "--privileged", is_flag=True, default=False)
 @click.argument("imagename", type=click.STRING, autocompletion=get_docker_images)
-@click.argument("docker_args", nargs=-1, type=click.UNPROCESSED)
-def main(imagename):
+def main(privileged, imagename):
     from subprocess import call
     from pathlib import Path
 
@@ -24,7 +24,7 @@ def main(imagename):
             break
     click.secho(f"Mounting workspace: {workspace}", fg="yellow")
     call(
-        f"docker run --rm -it {' '.join(docker_args)} -v '{workspace}':'{workspace}' -w '{cwd}' '{imagename}'",
+        f"docker run --rm -it {'--privileged' if privileged else ''} -v '{workspace}':'{workspace}' -w '{cwd}' '{imagename}'",
         shell=True,
     )
 
