@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dcli"
-version = "0.1.5"
+version = "0.1.6"
 description = ""
 authors = ["Jóhann Friðriksson <johann.fridriksson@gmail.com>"]
 
@@ -8,6 +8,7 @@ authors = ["Jóhann Friðriksson <johann.fridriksson@gmail.com>"]
 python = "^3.8"
 click = "^7.1.2"
 docker = "^5.0.0"
+six = "^1.16.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
